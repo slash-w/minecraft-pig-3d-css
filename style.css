@@ -1,0 +1,413 @@
+:root{
+    --size:5rem;
+    --rotateSpeed: 15s;
+}
+
+@keyframes rotateScene {
+    to {transform: rotateY(-360deg);}  
+}
+
+body{
+    background-color: #112;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 40rem;
+    perspective-origin: 50% calc(50% - 32rem);
+}
+
+.scene{
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateScene var(--rotateSpeed) infinite linear;
+}
+
+
+.body{
+    height: 8rem;
+    width: 10rem;
+    position: absolute;
+    bottom:8rem;
+    left: -5rem;
+    transform-style: preserve-3d;
+
+    .body-front, .body-back, .body-left, .body-right, .body-top, .body-bottom{
+        width: 100%;
+        height: 100%;
+        background-color:#00f7;
+        position: absolute;
+    }
+    .body-front     {
+        background-image: url(./images/body/body-front.png);
+        background-size: contain;
+        transform: rotateY(0deg) translateZ(8rem);
+    }
+    .body-back      {
+        background-image: url(./images/body/body-back.png);
+        background-size: contain;
+        transform: rotateY(180deg) translateZ(8rem);
+    }
+    .body-left      {
+        background-image: url(./images/body/body-left.png);
+        background-size: contain;
+        width:16rem;
+        transform: rotateY(90deg) translateZ(2rem);
+    }
+    .body-right     {
+        background-image: url(./images/body/body-right.png);
+        background-size: contain;
+        width:16rem;
+        transform: rotateY(270deg) translateZ(8rem);
+    }
+    .body-top       {
+        background-image: url(./images/body/body-top.png);
+        background-size: contain;
+        background-color: #f00b;
+        height: 16rem;
+        transform: rotateX(90deg) translateZ(8rem);
+    }
+    .body-bottom    {
+        background-image: url(./images/body/body-bottom.png);
+        background-size: contain;
+        background-color: #f00b;
+        height: 16rem;
+        transform: rotateX(90deg) translateZ(0rem);
+    }
+}
+
+.head{
+    height: 8rem;
+    aspect-ratio: 1;
+    position: absolute;
+    bottom:10rem;
+    left:-4rem;
+    transform-style: preserve-3d;
+
+    .head-front, .head-back, .head-left, .head-right, .head-top, .head-bottom{
+        width: 100%;
+        height: 100%;
+        background-color: #f007;
+        position: absolute;
+    }
+    .head-front {
+        transform: translateZ(14rem);
+        background-image: url(./images/face/face-front.png);
+        background-size: contain;
+    }
+    .head-back  {
+        transform: rotateY(180deg) translateZ(-6rem);
+        background-image: url(./images/face/face-back.png);
+        background-size: contain;
+    }
+    .head-left  {
+        transform: rotateY(90deg)
+        translateZ(4rem)
+        translateX(-10rem);
+        background-image: url(./images/face/face-left.png);
+        background-size: contain;
+    }
+    .head-right {
+        transform: rotateY(270deg)
+        translateZ(4rem)
+        translateX(10rem);
+        background-image: url(./images/face/face-right.png);
+        background-size: contain;
+    }
+    .head-top   {
+        transform: rotateX(90deg)
+        translateZ(4rem)
+        translateY(10rem);
+        background-image: url(./images/face/face-top.png);
+        background-size: contain;
+    }
+    .head-bottom{
+        transform: rotateX(270deg)
+        translateZ(4rem)
+        translateY(-10rem);
+        background-image: url(./images/face/face-bottom.png);
+        background-size: contain;
+    }
+}
+
+.leg{
+    height: 6rem;
+    width: 4rem;
+    position: absolute;
+    bottom:2rem;
+    left:-1rem;
+    transform-style: preserve-3d;
+
+    /*          LEG 1         */
+    .leg1-front, .leg1-back, .leg1-left, .leg1-right, .leg1-top, .leg1-bottom{
+        height: 100%;
+        width: 100%;
+        background-color: #0ff7;
+        left: 2rem;
+        position: absolute;
+    }
+    .leg1-front{
+        background-image: url(./images/legs/leg-front.png);
+        background-size: contain;
+        transform: rotateY(0deg) translateZ(8rem);
+    }
+    .leg1-back{
+        background-image: url(./images/legs/leg-back.png);
+        background-size: contain;
+        transform: rotateY(180deg) translateZ(-4rem);
+    }
+    .leg1-left{
+        background-image: url(./images/legs/leg-left.png);
+        background-size: contain;
+        transform: rotateY(90deg)
+        translateZ(2rem)
+        translateX(-6rem);
+    }
+    .leg1-right{
+        background-image: url(./images/legs/leg-right.png);
+        background-size: contain;
+        transform: rotateY(270deg)
+        translateZ(2rem)
+        translateX(6rem);
+    }
+    .leg1-top{
+        background-image: url(./images/legs/leg-top.png);
+        background-size: contain;
+        height: 4rem;
+        width: 4rem;
+        transform: rotateX(90deg)
+        translateZ(2rem)
+        translateY(6rem);
+    }
+    .leg1-bottom{
+        background-image: url(./images/legs/leg-top.png);
+        background-size: contain;
+        height: 4rem;
+        width: 4rem;
+        transform: rotateX(270deg)
+        translateZ(4rem)
+        translateY(-6rem);
+    }
+
+    /*       LEG 2            */
+    .leg2-front, .leg2-back, .leg2-left, .leg2-right, .leg2-top, .leg2-bottom{
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 251, 0, 0.467);
+        left: -4rem;
+        position: absolute;
+    }
+    .leg2-front{
+        background-image: url(./images/legs/leg-front.png);
+        background-size: contain;
+        transform: rotateY(0deg) translateZ(8rem);
+    }
+    .leg2-back{
+        background-image: url(./images/legs/leg-back.png);
+        background-size: contain;
+        transform: rotateY(180deg) translateZ(-4rem);
+    }
+    .leg2-left{
+        background-image: url(./images/legs/leg-left.png);
+        background-size: contain;
+        transform: rotateY(90deg)
+        translateZ(2rem)
+        translateX(-6rem);
+    }
+    .leg2-right{
+        background-image: url(./images/legs/leg-right.png);
+        background-size: contain;
+        transform: rotateY(270deg)
+        translateZ(2rem)
+        translateX(6rem);
+    }
+    .leg2-top{
+        background-image: url(./images/legs/leg-top.png);
+        background-size: contain;
+        height: 4rem;
+        width: 4rem;
+        transform: rotateX(90deg)
+        translateZ(2rem)
+        translateY(6rem);
+    }
+    .leg2-bottom{
+        background-image: url(./images/legs/leg-top.png);
+        background-size: contain;
+        height: 4rem;
+        width: 4rem;
+        transform: rotateX(270deg)
+        translateZ(4rem)
+        translateY(-6rem);
+    }
+
+    /*      LEG 3       */
+    .leg3-front, .leg3-back, .leg3-left, .leg3-right, .leg3-top, .leg3-bottom{
+        height: 100%;
+        width: 100%;
+        background-color: rgba(255, 0, 119, 0.467);
+        left: 2rem;
+        position: absolute;
+    }
+    .leg3-front{
+        background-image: url(./images/legs/leg-front.png);
+        background-size: contain;
+        transform: rotateY(0deg) translateZ(-4rem);
+    }
+    .leg3-back{
+        background-image: url(./images/legs/leg-back.png);
+        background-size: contain;
+        transform: rotateY(180deg) translateZ(8rem);
+    }
+    .leg3-left{
+        background-image: url(./images/legs/leg-left.png);
+        background-size: contain;
+        transform: rotateY(90deg)
+        translateZ(2rem)
+        translateX(6rem);
+    }
+    .leg3-right{
+        background-image: url(./images/legs/leg-right.png);
+        background-size: contain;
+        transform: rotateY(270deg)
+        translateZ(2rem)
+        translateX(-6rem);
+    }
+    .leg3-top{
+        background-image: url(./images/legs/leg-top.png);
+        background-size: contain;
+        height: 4rem;
+        width: 4rem;
+        transform: rotateX(90deg)
+        translateZ(2rem)
+        translateY(-6rem);
+    }
+    .leg3-bottom{
+        background-image: url(./images/legs/leg-top.png);
+        background-size: contain;
+        height: 4rem;
+        width: 4rem;
+        transform: rotateX(270deg)
+        translateZ(4rem)
+        translateY(6rem);
+    }
+
+    /*      LEG 4       */
+    .leg4-front, .leg4-back, .leg4-left, .leg4-right, .leg4-top, .leg4-bottom{
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 255, 76, 0.467);
+        left: -4rem;
+        position: absolute;
+    }
+    .leg4-front{
+        background-image: url(./images/legs/leg-front.png);
+        background-size: contain;
+        transform: rotateY(0deg) translateZ(-4rem);
+    }
+    .leg4-back{
+        background-image: url(./images/legs/leg-back.png);
+        background-size: contain;
+        transform: rotateY(180deg) translateZ(8rem);
+    }
+    .leg4-left{
+        background-image: url(./images/legs/leg-left.png);
+        background-size: contain;
+        transform: rotateY(90deg)
+        translateZ(2rem)
+        translateX(6rem);
+    }
+    .leg4-right{
+        background-image: url(./images/legs/leg-right.png);
+        background-size: contain;
+        transform: rotateY(270deg)
+        translateZ(2rem)
+        translateX(-6rem);
+    }
+    .leg4-top{
+        background-image: url(./images/legs/leg-top.png);
+        background-size: contain;
+        height: 4rem;
+        width: 4rem;
+        transform: rotateX(90deg)
+        translateZ(2rem)
+        translateY(-6rem);
+    }
+    .leg4-bottom{
+        background-image: url(./images/legs/leg-top.png);
+        background-size: contain;
+        height: 4rem;
+        width: 4rem;
+        transform: rotateX(270deg)
+        translateZ(4rem)
+        translateY(6rem);
+    }
+}
+
+.nose{
+    height: 3rem;
+    width: 4rem;
+    background-color: #faa7;
+    position: absolute;
+    bottom:11rem;
+    left:-2rem;
+    transform-style: preserve-3d;
+
+    .nose-front, .nose-left, .nose-right, .nose-top, .nose-bottom{
+        width: 100%;
+        height: 100%;
+        background-color: #f007;
+        position: absolute;
+    }
+    .nose-front {
+        transform: rotate(0deg) translateZ(15rem);
+        background-image: url(./images/nose/nose-front.png);
+        background-size: contain;
+    }
+    .nose-left  {
+        width: 1rem;
+        transform: rotateY(90deg)
+        translateZ(3.5rem)
+        translateX(-14.5rem);
+        background-image: url(./images/nose/nose-sides.png);
+        background-size: contain;
+    }
+    .nose-right {
+        width: 1rem;
+        transform: rotateY(270deg)
+        translateZ(0.5rem)
+        translateX(14.5rem);
+        background-image: url(./images/nose/nose-sides.png);
+        background-size: contain;
+    }
+    .nose-top   {
+        height: 1rem;
+        transform: rotateX(270deg)
+        translateZ(-0.5rem)
+        translateY(-14.5rem);
+        background-image: url(./images/nose/nose-top.png);
+        background-size: contain;
+    }
+    .nose-bottom{
+        height: 1rem;
+        transform: rotateX(90deg)
+        translateZ(-1.5rem)
+        translateY(14.5rem);
+        background-image: url(./images/nose/nose-bottom.png);
+        background-size: contain;
+    }
+}
+
+.floor{
+    display: none;
+    height: 50rem;
+    aspect-ratio: 1;
+    background-image:
+    repeating-conic-gradient(from 45deg, #000 0deg 90deg, #fff 90deg 180deg);
+    background-size: 5rem 5rem;
+    
+    transform-style: preserve-3d;
+    position: absolute;
+    transform: 
+    translate(-50%, -50%)
+    rotateX(90deg);
+}
